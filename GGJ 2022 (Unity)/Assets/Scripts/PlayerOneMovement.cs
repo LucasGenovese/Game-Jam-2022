@@ -10,6 +10,8 @@ public class PlayerOneMovement : MonoBehaviour
     private float Horizontal;
     private bool Ladder;
 
+    private PlayerController playerController;
+
     [SerializeField] private Container currentContainer;
     [SerializeField] private IngredientScriptable currentIngredient;
     [SerializeField] private Stove stove;
@@ -20,11 +22,11 @@ public class PlayerOneMovement : MonoBehaviour
     [SerializeField] private KeyCode rightKey;
     [SerializeField] private KeyCode interactKey;
     [SerializeField] Rigidbody2D Rb;
-    
 
-    void Start()
+    private void Awake()
     {
         Rb = GetComponent<Rigidbody2D>();
+        playerController = GetComponent<PlayerController>();
     }
 
     void Update()
@@ -57,7 +59,7 @@ public class PlayerOneMovement : MonoBehaviour
         {
             if (Input.GetKey(interactKey))
             {
-                stove.AddIngredient(currentIngredient);
+                stove.AddIngredient(playerController.PlayerType, currentIngredient);
                 currentIngredient = null;
             }
         }

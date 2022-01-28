@@ -22,7 +22,9 @@ public class GameManager : MonoBehaviour
     }
     #endregion // GameManager Instance
 
-    [SerializeReference] private IngredientDatabase _ingredientDatabase;
+    [SerializeField] private IngredientDatabase _ingredientDatabase;
+    [SerializeField] private ScoreManager _scoreManager;
 
     public IngredientDatabase IngredientDatabase => _ingredientDatabase;
+    public ScoreManager ScoreManager => _scoreManager;
 }
