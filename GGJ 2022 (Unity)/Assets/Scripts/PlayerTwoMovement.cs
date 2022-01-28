@@ -49,7 +49,6 @@ public class PlayerTwoMovement : MonoBehaviour
     {
         if (other.gameObject.tag == "Ladder")
         {
-            Debug.Log("toca la escalera");
             Ladder = true;
         }
         
@@ -58,7 +57,7 @@ public class PlayerTwoMovement : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ladder")
         {
-            Debug.Log("no toca la escalera");
+            
             Ladder = false;
         }
             

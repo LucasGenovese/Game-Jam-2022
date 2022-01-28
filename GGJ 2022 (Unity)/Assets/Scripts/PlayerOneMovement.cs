@@ -12,6 +12,7 @@ public class PlayerOneMovement : MonoBehaviour
 
     [SerializeField] private Container currentContainer;
     [SerializeField] private IngredientScriptable currentIngredient;
+    [SerializeField] private Stove stove;
 
     [SerializeField] private KeyCode upKey;
     [SerializeField] private KeyCode downKey;
@@ -51,13 +52,21 @@ public class PlayerOneMovement : MonoBehaviour
                 currentIngredient = currentContainer.SelectIngredient();
             }
         }
+
+        if (stove != null && currentIngredient != null)
+        {
+            if (Input.GetKey(interactKey))
+            {
+                stove.AddIngredient(currentIngredient);
+                currentIngredient = null;
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Ladder")
         {
-            Debug.Log("toca la escalera");
             Ladder = true;
         }
 
@@ -66,12 +75,16 @@ public class PlayerOneMovement : MonoBehaviour
             currentContainer = other.GetComponent<Container>();
         }
 
+        if (other.gameObject.CompareTag("Stove"))
+        {
+            stove = other.GetComponent<Stove>();
+        }
     }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Ladder")
         {
-            Debug.Log("no toca la escalera");
             Ladder = false;
         }
 
@@ -80,6 +93,10 @@ public class PlayerOneMovement : MonoBehaviour
             currentContainer = null;
         }
 
+        if (collision.gameObject.tag == "Stove")
+        {
+            stove = null;
+        }
     }
 
 }

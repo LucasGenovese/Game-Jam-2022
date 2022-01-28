@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ladder
   - Container
+  - Stove
   layers:
   - Default
   - TransparentFX

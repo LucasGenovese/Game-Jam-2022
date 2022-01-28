@@ -5,7 +5,7 @@ using UnityEngine;
 public class Stove : MonoBehaviour
 {
     [SerializeField] private RecipeScriptable _currentRecipe;
-    [SerializeField] private Ingredient _ingredient;
+    [SerializeField] private IngredientScriptable _ingredient;
 
 
     private void Update()
@@ -16,9 +16,9 @@ public class Stove : MonoBehaviour
         }
     }
 
-    public void AddIngredient(Ingredient ingredient)
+    public void AddIngredient(IngredientScriptable ingredient)
     {
-        if (_currentRecipe.ingredientList.Contains(ingredient.IngredientType))
+        if (_currentRecipe.ingredientList.Contains(ingredient))
         {
             Debug.Log("Todo Correcto!");
         }
