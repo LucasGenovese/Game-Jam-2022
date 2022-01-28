@@ -18,4 +18,8 @@ public class Container : MonoBehaviour
         var ingredient = GameObject.Instantiate(_ingredientPrefab, transform);
         ingredient.GetComponent<Ingredient>().Generate(_ingredient);
     }
+    public IngredientScriptable SelectIngredient()
+    {
+        return _ingredient;
+    }
 }
