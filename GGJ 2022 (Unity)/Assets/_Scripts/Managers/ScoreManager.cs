@@ -58,8 +58,15 @@ public class ScoreManager : MonoBehaviour
         float firstScore = totalScore * firstPlayerIngredients;
         float secondScore = totalScore * secondPlayerIngredients * 0.75f;
 
-        ScoreFirstPlayer(firstScore);
-        ScoreSecondPlayer(secondScore);
+        if (firstScore > 0)
+        {
+            ScoreFirstPlayer(firstScore);
+        }
+
+        if (secondScore > 0)
+        {
+            ScoreSecondPlayer(secondScore);
+        }
     }
 }
 

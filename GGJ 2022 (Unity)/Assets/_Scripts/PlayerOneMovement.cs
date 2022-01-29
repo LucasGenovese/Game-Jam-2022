@@ -123,6 +123,7 @@ public class PlayerOneMovement : MonoBehaviour
         if (other.gameObject.CompareTag("Stove"))
         {
             stove = other.GetComponent<Stove>();
+            stove.ShowIngredients();
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -145,6 +146,7 @@ public class PlayerOneMovement : MonoBehaviour
 
         if (collision.gameObject.tag == "Stove")
         {
+            stove.HideIngredients();
             stove = null;
         }
     }

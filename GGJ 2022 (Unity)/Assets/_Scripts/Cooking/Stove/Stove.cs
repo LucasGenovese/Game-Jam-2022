@@ -8,6 +8,7 @@ public class Stove : MonoBehaviour
 
     [SerializeField] private PlayerController.Player _owner;
     [SerializeField] private Animator _animator;
+    [SerializeField] private Animator _uiAnimator;
     [SerializeField] private float _cookingTime = 5f;
     [SerializeField] private float _originalCookingTime;
     [SerializeField] private bool _isCooking = false;
@@ -18,6 +19,8 @@ public class Stove : MonoBehaviour
 
     [SerializeField] private int ingredientOwner = 0;
     [SerializeField] private int ingredientEnemy = 0;
+
+    public RecipeScriptable Recipe => _currentRecipe;
 
     public bool IsCooking
     {
@@ -140,5 +143,15 @@ public class Stove : MonoBehaviour
         {
             Debug.Log("Not Ready!");
         }
+    }
+
+    public void ShowIngredients()
+    {
+        _uiAnimator.SetBool("Show", true);
+    }
+
+    public void HideIngredients()
+    {
+        _uiAnimator.SetBool("Show", false);
     }
 }
