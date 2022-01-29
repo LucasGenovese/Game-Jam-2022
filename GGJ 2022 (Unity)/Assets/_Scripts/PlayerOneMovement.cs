@@ -52,7 +52,7 @@ public class PlayerOneMovement : MonoBehaviour
         if (!Ladder == false)
         {
             _animator.SetBool("isClimbing", false);
-        }
+        } 
 
         // MOVEMENT
         if (Input.GetKey(upKey) && Ladder == true)
@@ -67,14 +67,22 @@ public class PlayerOneMovement : MonoBehaviour
         }
         if (Input.GetKey(rightKey))
         {
+            _animator.SetBool("isWalking", true);
             Rb.velocity = new Vector2(Speed, Rb.velocity.y);
-        }
-        if (Input.GetKey(leftKey))
+            transform.localScale = new Vector3(-1.0f, 1.0f, 1.0f);
+        } else
         {
-            Rb.velocity = new Vector2(-Speed, Rb.velocity.y);
+            _animator.SetBool("isWalking", false);
         }
 
-        // ACTIONS
+        if (Input.GetKey(leftKey))
+        {
+            _animator.SetBool("isWalking", true);
+            Rb.velocity = new Vector2(-Speed, Rb.velocity.y);
+            transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+        }
+
+        // ACTIONS 
         if (currentContainer != null && currentIngredient == null)
         {
             if (Input.GetKey(interactKey))
