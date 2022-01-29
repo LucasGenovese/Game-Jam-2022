@@ -15,6 +15,11 @@ public class ScoreManager : MonoBehaviour
 
     float score;
 
+    public void StorePlayersScores()
+    {
+        GameManager.Instance.StorePlayersScores(_player1OverallScore, _player2OverallScore);   
+    }
+
     public void PlayerScore(PlayerController.Player player, float scoreAmount)
     {
         var addScore = scoreAmount;

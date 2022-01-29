@@ -7,7 +7,7 @@ public class Timer : MonoBehaviour
 {
     public TMP_Text textTimer;
 
-    private float timer = 151.0f; // 2:30 minutos
+    private float timer = 10.0f; // 2:30 minutos 151
     private bool isTimer = false;
 
     void Update()
@@ -15,9 +15,10 @@ public class Timer : MonoBehaviour
         timer -= Time.deltaTime;
         DisplayTimer();
 
-        if (timer < 0)
+        if (timer <= 0)
         {
-            textTimer.text = "FIN";
+            LevelController.Instance.ScoreManager.StorePlayersScores();
+            GameManager.Instance.LevelLoader.LoadScene("Condition");
         }
     }
 
