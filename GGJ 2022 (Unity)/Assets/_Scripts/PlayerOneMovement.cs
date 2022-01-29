@@ -16,6 +16,7 @@ public class PlayerOneMovement : MonoBehaviour
     [SerializeField] private Container currentContainer;
     [SerializeField] private IngredientScriptable currentIngredient;
     [SerializeField] private Stove stove;
+    [SerializeField] private GameObject trash;
 
     [SerializeField] private KeyCode upKey;
     [SerializeField] private KeyCode downKey;
@@ -28,7 +29,8 @@ public class PlayerOneMovement : MonoBehaviour
     private void Awake()
     {
         Rb = GetComponent<Rigidbody2D>();
-        playerController = GetComponent<PlayerController>();        
+        playerController = GetComponent<PlayerController>();
+        _animator = GetComponent<Animator>();
     }
 
     private void Start()
@@ -91,6 +93,14 @@ public class PlayerOneMovement : MonoBehaviour
                 _animator.SetTrigger("Action");
             }
         }
+
+        if (trash != null)
+        {
+            if (Input.GetKey(interactKey))
+            {
+                currentIngredient = null;
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -98,6 +108,11 @@ public class PlayerOneMovement : MonoBehaviour
         if (other.gameObject.tag == "Ladder")
         {
             Ladder = true;
+        }
+
+        if (other.gameObject.tag == "Trash")
+        {
+            trash = other.gameObject;
         }
 
         if (other.gameObject.tag == "Container")
@@ -116,6 +131,11 @@ public class PlayerOneMovement : MonoBehaviour
         {
             Ladder = false;
             _animator.SetBool("isClimbing", false);
+        }
+
+        if (collision.gameObject.tag == "Trash")
+        {
+            trash = null;
         }
 
         if (collision.gameObject.tag == "Container")

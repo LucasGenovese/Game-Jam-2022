@@ -141,6 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 3
+  _animator: {fileID: 0}
   currentContainer: {fileID: 0}
   currentIngredient: {fileID: 0}
   stove: {fileID: 0}
@@ -150,6 +151,7 @@ MonoBehaviour:
   rightKey: 100
   interactKey: 306
   Rb: {fileID: 0}
+  isOnline: 0
 --- !u!114 &7607047722711435065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,6 +167,7 @@ MonoBehaviour:
   _playerType: 0
   _photonView: {fileID: 1996980386033909585}
   _playerMovement: {fileID: 7607047722711435064}
+  isOnline: 0
 --- !u!114 &1996980386033909585
 MonoBehaviour:
   m_ObjectHideFlags: 0

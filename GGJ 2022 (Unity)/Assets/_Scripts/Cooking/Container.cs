@@ -6,11 +6,22 @@ public class Container : MonoBehaviour
 {
     [SerializeField] IngredientScriptable _ingredient;
     [SerializeField] private GameObject _ingredientPrefab;
+    [SerializeField] private SpriteRenderer _renderer;
 
     public IngredientScriptable CurrentIngredient
     {
         get { return _ingredient; }
-        set { _ingredient = value; }
+        set { _ingredient = value; UpdateArtwork(); }
+    }
+
+    private void Awake()
+    {
+        _renderer = GetComponent<SpriteRenderer>();
+    }
+
+    private void UpdateArtwork()
+    {
+        _renderer.sprite = CurrentIngredient.artwork;
     }
 
     public void CreateIngredient()

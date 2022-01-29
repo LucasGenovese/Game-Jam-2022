@@ -7,18 +7,17 @@ using TMPro;
 
 public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
 {
-    [SerializeField] private TMP_InputField createInput;
-    [SerializeField] private TMP_InputField joinInput;
+    [SerializeField] private TMP_InputField roomInput;
 
 
     public void CreateRoom()
     {
-        PhotonNetwork.CreateRoom(createInput.text);
+        PhotonNetwork.CreateRoom(roomInput.text);
     }
 
     public void JoinRoom()
     {
-        PhotonNetwork.JoinRoom(joinInput.text);
+        PhotonNetwork.JoinRoom(roomInput.text);
     }
 
     public override void OnJoinedRoom()
