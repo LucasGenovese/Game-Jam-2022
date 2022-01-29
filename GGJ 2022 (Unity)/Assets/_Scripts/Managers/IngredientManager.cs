@@ -17,12 +17,11 @@ public class IngredientManager : MonoBehaviour
     private void Awake()
     {
         _ingredientTypes = new List<IngredientScriptable>(LevelController.Instance.IngredientDatabase.Ingredients.ToList());
-        _recipeList = new List<RecipeScriptable>(LevelController.Instance.RecipeDatabase.Recipes.ToList());
+        _recipeList = LevelController.Instance.RecipeDatabase.Recipes.ToList();
     }
 
     private void Start()
     {
-
         RandomizeIngredients();
     }
 

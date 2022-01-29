@@ -7,6 +7,10 @@ public class GameManager : MonoBehaviour
     #region # // Game Manager Instance \\ #
     // Game Manager Instance
     public static GameManager Instance;
+
+
+    [SerializeField] private float _firstPlayerScore;
+    [SerializeField] private float _secondPlayerScore;
     private void Awake()
     {
         if (Instance == null)
@@ -28,5 +32,22 @@ public class GameManager : MonoBehaviour
     {
         get { return _levelLoader; }
         set { _levelLoader = value; }
+    }
+
+    public void StorePlayersScores(float firstPlayer, float secondPlayer)
+    {
+        _firstPlayerScore = firstPlayer;
+        _secondPlayerScore = secondPlayer;
+    }
+
+
+    public float FirstPlayerScore
+    {
+        get { return _firstPlayerScore; }
+    }
+
+    public float SecondPlayerScore
+    {
+        get { return _secondPlayerScore; }
     }
 }
