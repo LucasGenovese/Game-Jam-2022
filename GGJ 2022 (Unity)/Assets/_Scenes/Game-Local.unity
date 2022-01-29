@@ -432,7 +432,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4468223582779523444, guid: e91bda4ab663c464eb32ee046e682fa8, type: 3}
       propertyPath: m_SortingOrder
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4468223582779523444, guid: e91bda4ab663c464eb32ee046e682fa8, type: 3}
       propertyPath: m_SortingLayerID
@@ -2740,15 +2740,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53f11b42bd7957549aacc82b656146ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentRecipe: {fileID: 11400000, guid: c89a202a7d5a7de41834a1265a04eeb7, type: 2}
+  _currentRecipe: {fileID: 0}
   _owner: 0
   _animator: {fileID: 683224300}
   _uiAnimator: {fileID: 1258879001}
   _cookingTime: 5
   _originalCookingTime: 0
   _isCooking: 0
-  _nextRecipe: {fileID: 11400000, guid: c89a202a7d5a7de41834a1265a04eeb7, type: 2}
+  _nextRecipe: {fileID: 0}
   _neededIngredients: []
+  _uiComponent: {fileID: 0}
   _ingredientsUsed: 0
   ingredientOwner: 0
   ingredientEnemy: 0
@@ -6439,7 +6440,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1675798201
   m_SortingLayer: 1
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 4e8b41ff16484a14e92c9bbbb823dac7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -6606,15 +6607,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53f11b42bd7957549aacc82b656146ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentRecipe: {fileID: 11400000, guid: c89a202a7d5a7de41834a1265a04eeb7, type: 2}
+  _currentRecipe: {fileID: 0}
   _owner: 1
   _animator: {fileID: 1733830668}
   _uiAnimator: {fileID: 744662365}
   _cookingTime: 5
   _originalCookingTime: 0
   _isCooking: 0
-  _nextRecipe: {fileID: 11400000, guid: c89a202a7d5a7de41834a1265a04eeb7, type: 2}
+  _nextRecipe: {fileID: 0}
   _neededIngredients: []
+  _uiComponent: {fileID: 0}
   _ingredientsUsed: 0
   ingredientOwner: 0
   ingredientEnemy: 0
@@ -8412,6 +8414,7 @@ GameObject:
   - component: {fileID: 1368251602}
   - component: {fileID: 4053009861277120140}
   - component: {fileID: 4053009861277120141}
+  - component: {fileID: 4053009861277120142}
   m_Layer: 0
   m_Name: Level Controller
   m_TagString: Untagged
@@ -8434,8 +8437,12 @@ MonoBehaviour:
   _firstPlayerSpawn: {fileID: 0}
   _secondPlayerSpawn: {fileID: 0}
   _playerExists: 0
+  _firstStove: {fileID: 683224299}
+  _secondStove: {fileID: 1733830666}
   _ingredientDatabase: {fileID: 1368251615}
+  _recipeDatabase: {fileID: 4053009861277120142}
   _scoreManager: {fileID: 1368251602}
+  ingredientManager: {fileID: 4053009861277120141}
 --- !u!114 &4053009861277120141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8459,3 +8466,16 @@ MonoBehaviour:
   - {fileID: 1628666031}
   _ingredientPrefab: {fileID: 3922857169146226357, guid: c5d1abb9ea8df6e4082491d33b59b0c0, type: 3}
   _ingredientTypes: []
+  _recipeList: []
+--- !u!114 &4053009861277120142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4053009861277120139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03380a1ef617b1b47955757eaee049b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

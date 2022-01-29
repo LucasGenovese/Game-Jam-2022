@@ -8,11 +8,6 @@ public class RecipeIngredientsUI : MonoBehaviour
     [SerializeField] private List<Image> _ingredients;
     [SerializeField] private Stove _stove;
 
-    private void Start()
-    {
-        UpdateIngridientList();
-    }
-
     public void UpdateIngridientList()
     {
         for (int i = 0; i < _ingredients.Count; i++)

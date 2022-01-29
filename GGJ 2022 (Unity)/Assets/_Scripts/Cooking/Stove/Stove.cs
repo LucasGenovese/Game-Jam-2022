@@ -15,6 +15,7 @@ public class Stove : MonoBehaviour
 
     [SerializeField] private RecipeScriptable _nextRecipe;
     [SerializeField] private List<IngredientScriptable> _neededIngredients;
+    [SerializeField] private RecipeIngredientsUI _uiComponent;
     [SerializeField] private int _ingredientsUsed = 0;
 
     [SerializeField] private int ingredientOwner = 0;
@@ -30,13 +31,13 @@ public class Stove : MonoBehaviour
     private void Awake()
     {
         _animator = GetComponent<Animator>();
+        _uiComponent = GetComponentInChildren<RecipeIngredientsUI>();
     }
 
     private void Start()
     {
         _originalCookingTime = _cookingTime;
         _cookingTime = 0;
-        ChangeRecipe(_nextRecipe);
     }
 
     private void Update()
@@ -79,11 +80,14 @@ public class Stove : MonoBehaviour
         _ingredientsUsed = 0;
         _currentRecipe = recipe;
         _neededIngredients = new List<IngredientScriptable>(_currentRecipe.ingredientList);
+        _uiComponent.UpdateIngridientList();
     }
 
     public void FinishedRecipe()
     {
         _currentRecipe = null;
+        _currentRecipe = LevelController.Instance.RecipeManager.SelectRandomRecipe();
+        ChangeRecipe(_currentRecipe);
     }
 
     public void AddIngredient(PlayerController.Player player, IngredientScriptable ingredient)
