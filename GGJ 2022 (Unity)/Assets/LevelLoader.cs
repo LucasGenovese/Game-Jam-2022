@@ -4,6 +4,10 @@ using UnityEngine.SceneManagement;
 
 public class LevelLoader : MonoBehaviour
 {
+
+
+
+    [Header("Extras")]
     [SerializeField] private Animator _animator;
     [SerializeField] private float _transitionTime = 1f;
 
@@ -30,4 +34,6 @@ public class LevelLoader : MonoBehaviour
         yield return new WaitForSeconds(_transitionTime);
         SceneManager.LoadScene(sceneName);
     }
+
+
 }

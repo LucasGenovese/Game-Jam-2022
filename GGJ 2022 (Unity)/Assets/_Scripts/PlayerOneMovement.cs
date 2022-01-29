@@ -12,6 +12,7 @@ public class PlayerOneMovement : MonoBehaviour
 
     private PlayerController playerController;
 
+    [SerializeField] private Animator _animator;
     [SerializeField] private Container currentContainer;
     [SerializeField] private IngredientScriptable currentIngredient;
     [SerializeField] private Stove stove;
@@ -22,20 +23,44 @@ public class PlayerOneMovement : MonoBehaviour
     [SerializeField] private KeyCode rightKey;
     [SerializeField] private KeyCode interactKey;
     [SerializeField] Rigidbody2D Rb;
+    [SerializeField] private bool isOnline = false;
 
     private void Awake()
     {
         Rb = GetComponent<Rigidbody2D>();
-        playerController = GetComponent<PlayerController>();
+        playerController = GetComponent<PlayerController>();        
     }
 
-    void Update()
+    private void Start()
     {
-        if (Input.GetKey(upKey) && Ladder == true){
+        isOnline = GetComponent<PlayerController>().isOnline;
+    }
+
+    private void Update()
+    {
+        if (!isOnline)
+        {
+            ReadInput();
+        }
+    }
+
+
+    public void ReadInput()
+    {
+        if (!Ladder == false)
+        {
+            _animator.SetBool("isClimbing", false);
+        }
+
+        // MOVEMENT
+        if (Input.GetKey(upKey) && Ladder == true)
+        {
+            _animator.SetBool("isClimbing", true);
             Rb.velocity = new Vector2(0, Speed);
         }
         if (Input.GetKey(downKey) && Ladder == true)
         {
+            _animator.SetBool("isClimbing", true);
             Rb.velocity = new Vector2(Rb.velocity.x, -Speed);
         }
         if (Input.GetKey(rightKey))
@@ -47,11 +72,13 @@ public class PlayerOneMovement : MonoBehaviour
             Rb.velocity = new Vector2(-Speed, Rb.velocity.y);
         }
 
+        // ACTIONS
         if (currentContainer != null && currentIngredient == null)
         {
             if (Input.GetKey(interactKey))
             {
                 currentIngredient = currentContainer.SelectIngredient();
+                _animator.SetTrigger("Action");
             }
         }
 
@@ -61,6 +88,7 @@ public class PlayerOneMovement : MonoBehaviour
             {
                 stove.AddIngredient(playerController.PlayerType, currentIngredient);
                 currentIngredient = null;
+                _animator.SetTrigger("Action");
             }
         }
     }
@@ -82,12 +110,12 @@ public class PlayerOneMovement : MonoBehaviour
             stove = other.GetComponent<Stove>();
         }
     }
-
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Ladder")
         {
             Ladder = false;
+            _animator.SetBool("isClimbing", false);
         }
 
         if (collision.gameObject.tag == "Container")
