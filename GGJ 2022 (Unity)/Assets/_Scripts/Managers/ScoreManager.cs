@@ -17,16 +17,16 @@ public class ScoreManager : MonoBehaviour
 
     public void PlayerScore(PlayerController.Player player, float scoreAmount)
     {
-        score = scoreAmount;
+        var addScore = scoreAmount;
 
         switch (player)
         {
             case PlayerController.Player.FirstPlayer:
-                ScoreFirstPlayer();
+                ScoreFirstPlayer(addScore);
                 break;
 
             case PlayerController.Player.SecondPlayer:
-                ScoreSecondPlayer();
+                ScoreSecondPlayer(addScore);
                 break;
 
             default:
@@ -35,14 +35,31 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
-    private void ScoreFirstPlayer()
+    public void EveryoneScore(float scoreAmount)
     {
-        _firstPlayer.ShowScore(score.ToString());
+        var addScore = scoreAmount;
+        ScoreFirstPlayer(addScore);
+        ScoreSecondPlayer(addScore);
     }
 
-    private void ScoreSecondPlayer()
+    private void ScoreFirstPlayer(float addScore)
     {
-        _secondPlayer.ShowScore(score.ToString());
+        _firstPlayer.ShowScore(addScore.ToString());
+    }
+
+    private void ScoreSecondPlayer(float addScore)
+    {
+        _secondPlayer.ShowScore(addScore.ToString());
+    }
+
+    public void ProportionalScore(int firstPlayerIngredients, int secondPlayerIngredients, float score)
+    {
+        float totalScore = (score / (firstPlayerIngredients + secondPlayerIngredients));
+        float firstScore = totalScore * firstPlayerIngredients;
+        float secondScore = totalScore * secondPlayerIngredients * 0.75f;
+
+        ScoreFirstPlayer(firstScore);
+        ScoreSecondPlayer(secondScore);
     }
 }
 

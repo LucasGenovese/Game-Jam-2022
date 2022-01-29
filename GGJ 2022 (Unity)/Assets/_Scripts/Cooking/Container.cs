@@ -20,6 +20,7 @@ public class Container : MonoBehaviour
     }
     public IngredientScriptable SelectIngredient()
     {
+        Debug.Log($"[Container]: Se selecciono {_ingredient.name}");
         return _ingredient;
     }
 }

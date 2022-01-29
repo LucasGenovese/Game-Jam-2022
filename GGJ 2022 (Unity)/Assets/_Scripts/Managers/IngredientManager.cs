@@ -19,7 +19,7 @@ public class IngredientManager : MonoBehaviour
 
     private void RandomizeIngredients()
     {
-        _ingredientTypes = GameManager.Instance.IngredientDatabase.Ingredients.ToList();
+        _ingredientTypes = LevelController.Instance.IngredientDatabase.Ingredients.ToList();
         int _index = 0;
 
         foreach (var container in _ingredientContainers)

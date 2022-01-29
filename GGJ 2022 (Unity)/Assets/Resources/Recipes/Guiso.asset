@@ -15,6 +15,6 @@ MonoBehaviour:
   name: Guiso
   artwork: {fileID: 0}
   ingredientList:
-  - {fileID: 11400000, guid: 53eaad8acbdaefe4bad6bd4c82913edb, type: 2}
+  - {fileID: 11400000, guid: 16217cd8227a10a41ad31c6b75c6bd9b, type: 2}
   - {fileID: 11400000, guid: 7a071f137dde84447b28ef5334fad4d8, type: 2}
-  - {fileID: 11400000, guid: 22551abe0f4a2804d945782f5a73e0ed, type: 2}
+  - {fileID: 11400000, guid: 53eaad8acbdaefe4bad6bd4c82913edb, type: 2}

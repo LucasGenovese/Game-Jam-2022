@@ -55,7 +55,7 @@ public class PlayerOneMovement : MonoBehaviour
             }
         }
 
-        if (stove != null && currentIngredient != null)
+        if (stove != null && currentIngredient != null && stove.IsCooking == false)
         {
             if (Input.GetKey(interactKey))
             {
