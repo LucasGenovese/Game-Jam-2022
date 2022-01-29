@@ -7,10 +7,18 @@ public class IngredientManager : MonoBehaviour
 {
     [Header("Containers")]
     [SerializeField] private List<Container> _ingredientContainers;
+
     [SerializeField] private GameObject _ingredientPrefab;
 
     [Header("Ingredients")]
     [SerializeField] private List<IngredientScriptable> _ingredientTypes;
+    [SerializeField] private List<RecipeScriptable> _recipeList;
+
+    private void Awake()
+    {
+        _ingredientTypes = new List<IngredientScriptable>(LevelController.Instance.IngredientDatabase.Ingredients.ToList());
+        _recipeList = LevelController.Instance.RecipeDatabase.Recipes.ToList();
+    }
 
     private void Start()
     {
@@ -19,7 +27,6 @@ public class IngredientManager : MonoBehaviour
 
     private void RandomizeIngredients()
     {
-        _ingredientTypes = LevelController.Instance.IngredientDatabase.Ingredients.ToList();
         int _index = 0;
 
         foreach (var container in _ingredientContainers)
@@ -31,5 +38,11 @@ public class IngredientManager : MonoBehaviour
             _index++;
         }
 
+    }
+
+    public RecipeScriptable SelectRandomRecipe()
+    {
+        RecipeScriptable recipe = _recipeList[Random.RandomRange(0, _recipeList.Count)];
+        return recipe;
     }
 }

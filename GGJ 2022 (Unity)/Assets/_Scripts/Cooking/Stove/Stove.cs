@@ -8,16 +8,20 @@ public class Stove : MonoBehaviour
 
     [SerializeField] private PlayerController.Player _owner;
     [SerializeField] private Animator _animator;
+    [SerializeField] private Animator _uiAnimator;
     [SerializeField] private float _cookingTime = 5f;
     [SerializeField] private float _originalCookingTime;
     [SerializeField] private bool _isCooking = false;
 
     [SerializeField] private RecipeScriptable _nextRecipe;
     [SerializeField] private List<IngredientScriptable> _neededIngredients;
+    [SerializeField] private RecipeIngredientsUI _uiComponent;
     [SerializeField] private int _ingredientsUsed = 0;
 
     [SerializeField] private int ingredientOwner = 0;
     [SerializeField] private int ingredientEnemy = 0;
+
+    public RecipeScriptable Recipe => _currentRecipe;
 
     public bool IsCooking
     {
@@ -27,13 +31,13 @@ public class Stove : MonoBehaviour
     private void Awake()
     {
         _animator = GetComponent<Animator>();
+        _uiComponent = GetComponentInChildren<RecipeIngredientsUI>();
     }
 
     private void Start()
     {
         _originalCookingTime = _cookingTime;
         _cookingTime = 0;
-        ChangeRecipe(_nextRecipe);
     }
 
     private void Update()
@@ -76,11 +80,14 @@ public class Stove : MonoBehaviour
         _ingredientsUsed = 0;
         _currentRecipe = recipe;
         _neededIngredients = new List<IngredientScriptable>(_currentRecipe.ingredientList);
+        _uiComponent.UpdateIngridientList();
     }
 
     public void FinishedRecipe()
     {
         _currentRecipe = null;
+        _currentRecipe = LevelController.Instance.RecipeManager.SelectRandomRecipe();
+        ChangeRecipe(_currentRecipe);
     }
 
     public void AddIngredient(PlayerController.Player player, IngredientScriptable ingredient)
@@ -140,5 +147,15 @@ public class Stove : MonoBehaviour
         {
             Debug.Log("Not Ready!");
         }
+    }
+
+    public void ShowIngredients()
+    {
+        _uiAnimator.SetBool("Show", true);
+    }
+
+    public void HideIngredients()
+    {
+        _uiAnimator.SetBool("Show", false);
     }
 }

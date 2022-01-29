@@ -24,10 +24,16 @@ public class LevelController : MonoBehaviour
     [SerializeField] private bool _playerExists;
 
     [Header("Extras")]
+    
+    [SerializeField] private Stove _firstStove;
+    [SerializeField] private Stove _secondStove;
     [SerializeField] private IngredientDatabase _ingredientDatabase;
+    [SerializeField] private RecipeDatabase _recipeDatabase;
     [SerializeField] private ScoreManager _scoreManager;
+    [SerializeField] private IngredientManager ingredientManager;
 
     public IngredientDatabase IngredientDatabase => _ingredientDatabase;
+    public RecipeDatabase RecipeDatabase => _recipeDatabase;
     public ScoreManager ScoreManager => _scoreManager;
 
     public void OnlinePlayerSelection(GameObject player)
@@ -45,5 +51,13 @@ public class LevelController : MonoBehaviour
             player.GetComponent<PlayerController>().PlayerType = PlayerController.Player.SecondPlayer;
         }
     }
+
+    private void Start()
+    {
+        _firstStove.ChangeRecipe(ingredientManager.SelectRandomRecipe());
+        _secondStove.ChangeRecipe(ingredientManager.SelectRandomRecipe());
+    }
+
+    public IngredientManager RecipeManager => ingredientManager;
 
 }

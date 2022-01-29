@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edfb89ee16cdf1749bbe460d4c80b0e3, type: 3}
   m_Name: Zanahoria
   m_EditorClassIdentifier: 
-  name: 
-  artwork: {fileID: 0}
+  name: Zanahoria
+  artwork: {fileID: -1880223989, guid: 226d0011c5bef394d809bde69ad51eb8, type: 3}
