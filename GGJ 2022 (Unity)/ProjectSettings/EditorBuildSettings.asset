@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/Game-Online.unity
     guid: 916892a4846604345ad9089984b61097
+  - enabled: 1
+    path: Assets/_Scenes/Condition.unity
+    guid: be9a23a14b75c2f44ae0b90088e92c21
   m_configObjects: {}

@@ -7,7 +7,7 @@ public class Timer : MonoBehaviour
 {
     public TMP_Text textTimer;
 
-    private float timer = 10.0f; // 2:30 minutos 151
+    private float timer = 151.0f; // 2:30 minutos, segundos: 151
     private bool isTimer = false;
 
     void Update()
