@@ -1956,6 +1956,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 8510269185890455893, guid: 076d9e5b6b7824b4a9e52472944577f8, type: 3}
+      propertyPath: playerOnline
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8510269185890455894, guid: 076d9e5b6b7824b4a9e52472944577f8, type: 3}
       propertyPath: m_RootOrder
       value: 3

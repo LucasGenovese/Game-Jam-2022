@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Photon.Pun;
 
 public class ConditionManager : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class ConditionManager : MonoBehaviour
     public void OnClickMenu()
     {
         GameManager.Instance.LevelLoader.LoadScene("Menu");
+        PhotonNetwork.Disconnect();
     }
 
     public void LoadConditionImage()

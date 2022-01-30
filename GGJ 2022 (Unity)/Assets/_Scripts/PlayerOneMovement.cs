@@ -107,6 +107,7 @@ public class PlayerOneMovement : MonoBehaviour
             if (Input.GetKey(interactKey))
             {
                 currentIngredient = null;
+                _animator.SetTrigger("Action");
             }
         }
     }

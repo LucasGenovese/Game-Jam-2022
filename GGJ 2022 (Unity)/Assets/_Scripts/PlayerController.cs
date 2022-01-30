@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         _photonView = GetComponent<PhotonView>();
+        _playerMovement = GetComponent<PlayerOneMovement>();
     }
 
     private void Update()

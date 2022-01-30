@@ -49,11 +49,13 @@ public class ScoreManager : MonoBehaviour
 
     private void ScoreFirstPlayer(float addScore)
     {
+        _player1OverallScore = _player1OverallScore + addScore;
         _firstPlayer.ShowScore(addScore.ToString());
     }
 
     private void ScoreSecondPlayer(float addScore)
     {
+        _player2OverallScore = _player2OverallScore + addScore;
         _secondPlayer.ShowScore(addScore.ToString());
     }
 

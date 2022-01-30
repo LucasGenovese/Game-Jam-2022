@@ -38,17 +38,14 @@ public class LevelController : MonoBehaviour
 
     public void OnlinePlayerSelection(GameObject player)
     {
-        if (!_playerExists)
+        if (player.GetComponent<PlayerController>().PlayerType == PlayerController.Player.FirstPlayer)
         {
             player.transform.position = _firstPlayerSpawn.position;
-            player.GetComponent<PlayerController>().PlayerType = PlayerController.Player.FirstPlayer;
-            _playerExists = true;
         }
 
         else
         {
             player.transform.position = _secondPlayerSpawn.position;
-            player.GetComponent<PlayerController>().PlayerType = PlayerController.Player.SecondPlayer;
         }
     }
 

@@ -395,7 +395,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1675798201
   m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 698dd16f67b2b89499557132e9479532, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -503,9 +503,9 @@ GameObject:
   - component: {fileID: 56731843}
   - component: {fileID: 56731842}
   - component: {fileID: 56731848}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player 2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -980,7 +980,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1675798201
   m_SortingLayer: 1
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 6b2940df51cccf146a27851cd32146c9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2748,7 +2748,7 @@ MonoBehaviour:
   _owner: 0
   _animator: {fileID: 683224300}
   _uiAnimator: {fileID: 1258879001}
-  _cookingTime: 5
+  _cookingTime: 10
   _originalCookingTime: 0
   _isCooking: 0
   _nextRecipe: {fileID: 0}
@@ -3618,9 +3618,9 @@ GameObject:
   - component: {fileID: 879983674}
   - component: {fileID: 879983675}
   - component: {fileID: 879983676}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player 1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4555,7 +4555,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7770256742439614538, guid: e91bda4ab663c464eb32ee046e682fa8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4
+      value: -4.29
       objectReference: {fileID: 0}
     - target: {fileID: 7770256742439614538, guid: e91bda4ab663c464eb32ee046e682fa8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6059,6 +6059,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textTimer: {fileID: 1674509943}
+  timer: 151
 --- !u!1001 &1627517552
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6823,7 +6824,7 @@ MonoBehaviour:
   _owner: 1
   _animator: {fileID: 1733830668}
   _uiAnimator: {fileID: 744662365}
-  _cookingTime: 5
+  _cookingTime: 10
   _originalCookingTime: 0
   _isCooking: 0
   _nextRecipe: {fileID: 0}

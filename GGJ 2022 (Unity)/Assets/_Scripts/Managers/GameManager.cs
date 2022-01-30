@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
 
+    public bool playerOnline = false;
+
     [SerializeField] private float _firstPlayerScore;
     [SerializeField] private float _secondPlayerScore;
     private void Awake()
