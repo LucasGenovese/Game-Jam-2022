@@ -17,6 +17,8 @@ public class PlayerOneMovement : MonoBehaviour
     [Header("Extras")]
 
     [SerializeField] private bool Grounded;
+    [SerializeField] private Animator _currentItem;
+    [SerializeField] private SpriteRenderer __currentItemImage;
 
     private PlayerController playerController;
 
@@ -121,9 +123,11 @@ public class PlayerOneMovement : MonoBehaviour
             if (Input.GetKey(interactKey))
             {
                 currentIngredient = currentContainer.SelectIngredient();
+                __currentItemImage.sprite = currentIngredient.artwork;
                 playerSounds.AudioInteractIngredient();
                 _particles.Play();
                 _animator.SetTrigger("Action");
+                _currentItem.SetTrigger("Mostrar");
             }
         }
 
@@ -137,6 +141,7 @@ public class PlayerOneMovement : MonoBehaviour
                 playerSounds.AudioInteractStove();
                 _particles.Stop();
                 _animator.SetTrigger("Action");
+                _currentItem.SetTrigger("Ocultar");
             }
         }
 
@@ -149,6 +154,7 @@ public class PlayerOneMovement : MonoBehaviour
                 playerSounds.AudioInteractThrash();
                 _particles.Stop();
                 _animator.SetTrigger("Action");
+                _currentItem.SetTrigger("Ocultar");
             }
         }
 

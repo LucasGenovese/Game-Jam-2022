@@ -98,7 +98,7 @@ public class Stove : MonoBehaviour
     {
         _currentRecipe = null;
         _currentRecipe = LevelController.Instance.RecipeManager.SelectRandomRecipe();
-        _audioSource.PlayOneShot(finishedClip);
+        _audioSource.PlayOneShot(finishedClip, 5f);
         ChangeRecipe(_currentRecipe);
     }
 
