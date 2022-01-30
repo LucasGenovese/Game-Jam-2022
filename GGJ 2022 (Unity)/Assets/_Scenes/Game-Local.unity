@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1497461}
   - component: {fileID: 1497462}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesada (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -539,6 +539,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 3
+  Grounded: 0
+  groundLayers:
+    serializedVersion: 2
+    m_Bits: 256
   _animator: {fileID: 56731848}
   currentContainer: {fileID: 0}
   currentIngredient: {fileID: 0}
@@ -1275,7 +1279,7 @@ GameObject:
   m_Component:
   - component: {fileID: 290679564}
   - component: {fileID: 290679565}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesada (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1391,7 +1395,7 @@ GameObject:
   m_Component:
   - component: {fileID: 311447594}
   - component: {fileID: 311447595}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesada
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1725,7 +1729,7 @@ GameObject:
   m_Component:
   - component: {fileID: 412183300}
   - component: {fileID: 412183301}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesada (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2211,7 +2215,7 @@ GameObject:
   m_Component:
   - component: {fileID: 490239107}
   - component: {fileID: 490239108}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesada (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2590,7 +2594,7 @@ GameObject:
   m_Component:
   - component: {fileID: 632886359}
   - component: {fileID: 632886360}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Piso
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2648,7 +2652,7 @@ GameObject:
   m_Component:
   - component: {fileID: 672475085}
   - component: {fileID: 672475086}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesada (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3742,6 +3746,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 3
+  Grounded: 0
+  groundLayers:
+    serializedVersion: 2
+    m_Bits: 256
   _animator: {fileID: 879983676}
   currentContainer: {fileID: 0}
   currentIngredient: {fileID: 0}
@@ -7924,7 +7932,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1944254508}
   - component: {fileID: 1944254509}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesada (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8125,7 +8133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1993855473}
   - component: {fileID: 1993855474}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesada (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8183,7 +8191,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1999492830}
   - component: {fileID: 1999492831}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesada (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

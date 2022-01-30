@@ -9,9 +9,11 @@ public class PlayerOneMovement : MonoBehaviour
     private float Vertical;
     private float Horizontal;
     private bool Ladder;
+    [SerializeField] private bool Grounded;
 
     private PlayerController playerController;
 
+    [SerializeField] private LayerMask groundLayers;
     [SerializeField] private Animator _animator;
     [SerializeField] private Container currentContainer;
     [SerializeField] private IngredientScriptable currentIngredient;
@@ -49,6 +51,16 @@ public class PlayerOneMovement : MonoBehaviour
 
     public void ReadInput()
     {
+        if (Physics2D.Raycast(transform.position, Vector2.down, 1.0f, groundLayers))
+        {
+            Debug.Log("Toca el piso");
+            Grounded = true;
+        } else
+        {
+            Debug.Log("No Toca el piso");
+            Grounded = false;
+        }
+
         if (!Ladder == false)
         {
             _animator.SetBool("isClimbing", false);
@@ -60,6 +72,12 @@ public class PlayerOneMovement : MonoBehaviour
             _animator.SetBool("isClimbing", true);
             Rb.velocity = new Vector2(0, Speed);
         }
+
+        if (Input.GetKey(upKey) && Grounded)
+        {
+            Rb.velocity = Vector2.up * Speed;
+        }
+
         if (Input.GetKey(downKey) && Ladder == true)
         {
             _animator.SetBool("isClimbing", true);
