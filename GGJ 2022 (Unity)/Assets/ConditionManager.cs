@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using Photon.Pun;
+//using Photon.Pun;
 
 public class ConditionManager : MonoBehaviour
 {
@@ -19,7 +19,7 @@ public class ConditionManager : MonoBehaviour
     {
         GameManager.Instance.MusicMenu();
         GameManager.Instance.LevelLoader.LoadScene("Menu");
-        PhotonNetwork.Disconnect();
+        //PhotonNetwork.Disconnect();
     }
 
     public void LoadConditionImage()
