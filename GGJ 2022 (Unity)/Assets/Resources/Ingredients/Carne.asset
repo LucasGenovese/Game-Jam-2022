@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Carne
   m_EditorClassIdentifier: 
   name: Carne
-  artwork: {fileID: 150880668, guid: e84e36dd54cd92d4da88500e05a09e37, type: 3}
+  artwork: {fileID: 21300000, guid: ad8f4ac9e6f23414ebc5481ce0567037, type: 3}

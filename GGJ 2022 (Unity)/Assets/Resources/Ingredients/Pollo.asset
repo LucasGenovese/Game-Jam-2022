@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Pollo
   m_EditorClassIdentifier: 
   name: Pollo
-  artwork: {fileID: 1994570146, guid: ffa86f76df014444496357050f15cb32, type: 3}
+  artwork: {fileID: 21300000, guid: b6250442c8e9b7448bec5bfc5df598ce, type: 3}

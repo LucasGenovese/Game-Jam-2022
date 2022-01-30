@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Salsa
   m_EditorClassIdentifier: 
   name: Salsa
-  artwork: {fileID: -983191684, guid: 5eb2c71d104a31b48861538a857745d5, type: 3}
+  artwork: {fileID: 21300000, guid: aa373747321d01448a312911f215f3a6, type: 3}

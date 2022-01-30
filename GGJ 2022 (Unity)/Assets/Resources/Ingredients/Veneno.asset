@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Veneno
   m_EditorClassIdentifier: 
   name: Veneno
-  artwork: {fileID: 611144925, guid: 91734004be8a6384cbfcd067dc060584, type: 3}
+  artwork: {fileID: 21300000, guid: d4dae4f65d0a5314299846f01a961e3e, type: 3}

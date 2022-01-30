@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Lentejas
   m_EditorClassIdentifier: 
   name: Lentejas
-  artwork: {fileID: 1260272256, guid: d1906bbb47ac5cc4f9c293a31fb87f8b, type: 3}
+  artwork: {fileID: 21300000, guid: e9f35d16f0d5d4c46a2f3f518b41cddf, type: 3}

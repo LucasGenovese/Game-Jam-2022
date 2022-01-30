@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Papa
   m_EditorClassIdentifier: 
   name: Papa
-  artwork: {fileID: 947065659, guid: 3ed865dd7383f5d44970b5d366a4296a, type: 3}
+  artwork: {fileID: 21300000, guid: 148acbc5c0e428a46afe9718abef18c4, type: 3}
