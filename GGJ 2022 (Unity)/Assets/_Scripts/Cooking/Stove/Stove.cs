@@ -64,10 +64,17 @@ public class Stove : MonoBehaviour
         Debug.Log("[Stove] Checking Recipe Status...");
         _audioSource.Stop();
 
-        if (_ingredientsUsed >= _currentRecipe.ingredientList.Count) // Ya se termino el plato.
+        if (_ingredientsUsed >= _currentRecipe.ingredientList.Count && _owner == PlayerController.Player.FirstPlayer) // Ya se termino el plato.
         {
             Debug.Log("[Stove] Finished Recipe!");
             LevelController.Instance.ScoreManager.ProportionalScore(ingredientOwner, ingredientEnemy, 210);
+            FinishedRecipe();
+        }
+
+        if (_ingredientsUsed >= _currentRecipe.ingredientList.Count && _owner == PlayerController.Player.SecondPlayer) // Ya se termino el plato.
+        {
+            Debug.Log("[Stove] Finished Recipe!");
+            LevelController.Instance.ScoreManager.ProportionalScore(ingredientEnemy, ingredientOwner, 210);
             FinishedRecipe();
         }
 
