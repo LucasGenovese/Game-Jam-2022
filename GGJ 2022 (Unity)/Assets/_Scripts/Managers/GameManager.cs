@@ -74,7 +74,7 @@ public class GameManager : MonoBehaviour
     {
         _musicSource.Stop();
         _musicSource.clip = _finishMusic;
-        _musicSource.volume = 0.1f;
+        _musicSource.volume = 0.2f;
         _musicSource.Play();
     }
 }

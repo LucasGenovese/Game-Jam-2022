@@ -17,6 +17,7 @@ public class ConditionManager : MonoBehaviour
 
     public void OnClickMenu()
     {
+        GameManager.Instance.MusicMenu();
         GameManager.Instance.LevelLoader.LoadScene("Menu");
         PhotonNetwork.Disconnect();
     }

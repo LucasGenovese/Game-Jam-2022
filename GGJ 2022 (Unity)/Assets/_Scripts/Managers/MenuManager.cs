@@ -8,7 +8,7 @@ public class MenuManager : MonoBehaviour
 {
     public void OnClickPlay()
     {
-        GameManager.Instance.LevelLoader.LoadScene("Loading");
+        GameManager.Instance.LevelLoader.LoadScene("Lobby");
     }
 
     public void OnClickOptions()
