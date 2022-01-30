@@ -7,6 +7,7 @@ public class PlayerScore : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
     [SerializeField] private TextMeshProUGUI _text;
+    [SerializeField] private TextMeshProUGUI _overall;
 
     private static int _animatorTriggerHash; 
 

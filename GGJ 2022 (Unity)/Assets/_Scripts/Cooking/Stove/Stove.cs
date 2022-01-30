@@ -20,6 +20,9 @@ public class Stove : MonoBehaviour
 
     [SerializeField] private int ingredientOwner = 0;
     [SerializeField] private int ingredientEnemy = 0;
+    [SerializeField] private AudioClip cookingClip;
+    [SerializeField] private AudioClip finishedClip;
+    [SerializeField] private AudioSource _audioSource;
 
     public RecipeScriptable Recipe => _currentRecipe;
 
@@ -59,6 +62,7 @@ public class Stove : MonoBehaviour
     private void CheckRecipeStatus()
     {
         Debug.Log("[Stove] Checking Recipe Status...");
+        _audioSource.Stop();
 
         if (_ingredientsUsed >= _currentRecipe.ingredientList.Count) // Ya se termino el plato.
         {
@@ -87,6 +91,7 @@ public class Stove : MonoBehaviour
     {
         _currentRecipe = null;
         _currentRecipe = LevelController.Instance.RecipeManager.SelectRandomRecipe();
+        _audioSource.PlayOneShot(finishedClip);
         ChangeRecipe(_currentRecipe);
     }
 
@@ -96,6 +101,7 @@ public class Stove : MonoBehaviour
         {
             _cookingTime = _originalCookingTime;
             _animator.SetTrigger("Start Cooking");
+            _audioSource.PlayOneShot(cookingClip);
             _ingredientsUsed++;
 
             if (player == _owner) // Olla del jugador.

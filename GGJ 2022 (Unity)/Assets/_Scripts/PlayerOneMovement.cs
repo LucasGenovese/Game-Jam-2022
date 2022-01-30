@@ -9,6 +9,13 @@ public class PlayerOneMovement : MonoBehaviour
     private float Vertical;
     private float Horizontal;
     private bool Ladder;
+    [Header("Steps")]
+    [SerializeField] private float _stepTime;
+    [SerializeField] private float _originalStepTime;
+    [SerializeField] private ParticleSystem _particles;
+
+    [Header("Extras")]
+
     [SerializeField] private bool Grounded;
 
     private PlayerController playerController;
@@ -19,6 +26,7 @@ public class PlayerOneMovement : MonoBehaviour
     [SerializeField] private IngredientScriptable currentIngredient;
     [SerializeField] private Stove stove;
     [SerializeField] private GameObject trash;
+    [SerializeField] private PlayerSounds playerSounds;
 
     [SerializeField] private KeyCode upKey;
     [SerializeField] private KeyCode downKey;
@@ -38,6 +46,8 @@ public class PlayerOneMovement : MonoBehaviour
     private void Start()
     {
         isOnline = GetComponent<PlayerController>().isOnline;
+        _originalStepTime = _stepTime;
+        _stepTime = 0;
     }
 
     private void Update()
@@ -51,38 +61,44 @@ public class PlayerOneMovement : MonoBehaviour
 
     public void ReadInput()
     {
-        if (Physics2D.Raycast(transform.position, Vector2.down, 1.0f, groundLayers))
+        // GROUNDED
+        if (Physics2D.Raycast(transform.position, Vector2.down, 0.75f, groundLayers))
         {
-            Debug.Log("Toca el piso");
             Grounded = true;
-        } else
+        }         
+        else
         {
-            Debug.Log("No Toca el piso");
             Grounded = false;
         }
 
+        // CLIMBING
         if (!Ladder == false)
         {
             _animator.SetBool("isClimbing", false);
         } 
 
-        // MOVEMENT
+        // CLIMB
         if (Input.GetKey(upKey) && Ladder == true)
         {
             _animator.SetBool("isClimbing", true);
             Rb.velocity = new Vector2(0, Speed);
         }
 
-        if (Input.GetKey(upKey) && Grounded)
+        // JUMP
+        if (Input.GetKeyDown(upKey) && Grounded)
         {
             Rb.velocity = Vector2.up * Speed;
+            playerSounds.AudioJump();
         }
 
+        // FALL
         if (Input.GetKey(downKey) && Ladder == true)
         {
             _animator.SetBool("isClimbing", true);
             Rb.velocity = new Vector2(Rb.velocity.x, -Speed);
         }
+
+        // LEFT & RIGHT
         if (Input.GetKey(rightKey))
         {
             _animator.SetBool("isWalking", true);
@@ -92,7 +108,6 @@ public class PlayerOneMovement : MonoBehaviour
         {
             _animator.SetBool("isWalking", false);
         }
-
         if (Input.GetKey(leftKey))
         {
             _animator.SetBool("isWalking", true);
@@ -100,32 +115,55 @@ public class PlayerOneMovement : MonoBehaviour
             transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
         }
 
-        // ACTIONS 
+        // INGREDIENT
         if (currentContainer != null && currentIngredient == null)
         {
             if (Input.GetKey(interactKey))
             {
                 currentIngredient = currentContainer.SelectIngredient();
+                playerSounds.AudioInteractIngredient();
+                _particles.Play();
                 _animator.SetTrigger("Action");
             }
         }
 
+        // STOVE
         if (stove != null && currentIngredient != null && stove.IsCooking == false)
         {
             if (Input.GetKey(interactKey))
             {
                 stove.AddIngredient(playerController.PlayerType, currentIngredient);
                 currentIngredient = null;
+                playerSounds.AudioInteractStove();
+                _particles.Stop();
                 _animator.SetTrigger("Action");
             }
         }
 
-        if (trash != null)
+        // TRASH
+        if (trash != null &&  currentIngredient != null) // TRASH
         {
             if (Input.GetKey(interactKey))
             {
                 currentIngredient = null;
+                playerSounds.AudioInteractThrash();
+                _particles.Stop();
                 _animator.SetTrigger("Action");
+            }
+        }
+
+
+        if (_animator.GetBool("isWalking") == true || _animator.GetBool("isClimbing") == true)
+        {
+            if (_stepTime > 0)
+            {
+                _stepTime -= Time.deltaTime;
+            }
+
+            else
+            {
+                playerSounds.AudioStep();
+                _stepTime = _originalStepTime;
             }
         }
     }

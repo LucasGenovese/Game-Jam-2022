@@ -8,6 +8,8 @@ public class ScoreManager : MonoBehaviour
     [Header("Scores")] 
     [SerializeField] private float _player1OverallScore;
     [SerializeField] private float _player2OverallScore;
+    [SerializeField] private TextMeshProUGUI _overallScore1;
+    [SerializeField] private TextMeshProUGUI _overallScore2;
 
     [Header("Components")]
     [SerializeField] private PlayerScore _firstPlayer;
@@ -50,12 +52,14 @@ public class ScoreManager : MonoBehaviour
     private void ScoreFirstPlayer(float addScore)
     {
         _player1OverallScore = _player1OverallScore + addScore;
+        _overallScore1.text = _player1OverallScore.ToString();
         _firstPlayer.ShowScore(addScore.ToString());
     }
 
     private void ScoreSecondPlayer(float addScore)
     {
         _player2OverallScore = _player2OverallScore + addScore;
+        _overallScore2.text = _player2OverallScore.ToString();
         _secondPlayer.ShowScore(addScore.ToString());
     }
 

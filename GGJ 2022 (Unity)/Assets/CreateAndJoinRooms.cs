@@ -22,6 +22,11 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
 
     public override void OnJoinedRoom()
     {
+        if (PhotonNetwork.IsMasterClient)
+        {
+            Debug.Log("PhotonNetwork: Is Master Client");
+        }
+
         PhotonNetwork.LoadLevel("Game-Online");
     }
 }
