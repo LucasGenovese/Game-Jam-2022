@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1497461}
   - component: {fileID: 1497462}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesada (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -972,7 +972,7 @@ GameObject:
   m_Component:
   - component: {fileID: 290679564}
   - component: {fileID: 290679565}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesada (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1030,7 +1030,7 @@ GameObject:
   m_Component:
   - component: {fileID: 311447594}
   - component: {fileID: 311447595}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesada
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1248,7 +1248,7 @@ GameObject:
   m_Component:
   - component: {fileID: 412183300}
   - component: {fileID: 412183301}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesada (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1341,7 +1341,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7770256742439614538, guid: e91bda4ab663c464eb32ee046e682fa8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.05
+      value: -4.22
       objectReference: {fileID: 0}
     - target: {fileID: 7770256742439614538, guid: e91bda4ab663c464eb32ee046e682fa8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1463,7 +1463,7 @@ GameObject:
   m_Component:
   - component: {fileID: 490239107}
   - component: {fileID: 490239108}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesada (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1833,7 +1833,7 @@ GameObject:
   m_Component:
   - component: {fileID: 632886359}
   - component: {fileID: 632886360}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Piso
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1891,7 +1891,7 @@ GameObject:
   m_Component:
   - component: {fileID: 672475085}
   - component: {fileID: 672475086}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesada (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2171,7 +2171,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1675798201
   m_SortingLayer: 1
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 2e8cb5bcba6ab4b47a9b26049c3db355, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3002,7 +3002,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1675798201
   m_SortingLayer: 1
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 2e8cb5bcba6ab4b47a9b26049c3db355, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3426,7 +3426,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7770256742439614538, guid: e91bda4ab663c464eb32ee046e682fa8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4
+      value: -4.29
       objectReference: {fileID: 0}
     - target: {fileID: 7770256742439614538, guid: e91bda4ab663c464eb32ee046e682fa8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3646,7 +3646,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1675798201
   m_SortingLayer: 1
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 2e8cb5bcba6ab4b47a9b26049c3db355, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4548,6 +4548,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textTimer: {fileID: 1674509943}
+  timer: 151
 --- !u!1001 &1627517552
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5424,7 +5425,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1675798201
   m_SortingLayer: 1
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 2e8cb5bcba6ab4b47a9b26049c3db355, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -6354,7 +6355,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1944254508}
   - component: {fileID: 1944254509}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesada (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6555,7 +6556,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1993855473}
   - component: {fileID: 1993855474}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesada (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6613,7 +6614,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1999492830}
   - component: {fileID: 1999492831}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesada (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -17,7 +17,7 @@ public class SpawnPlayers : MonoBehaviour
             player.GetComponent<PlayerController>().PlayerType = PlayerController.Player.FirstPlayer;
             player.GetComponent<PlayerController>().isOnline = true;
             LevelController.Instance.OnlinePlayerSelection(player);
-
+            playerExist = true;
             GameManager.Instance.playerOnline = true;
         }
 

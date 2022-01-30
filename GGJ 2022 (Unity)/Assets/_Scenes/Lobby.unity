@@ -499,7 +499,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 448406812}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
@@ -644,7 +644,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Create
+  m_text: Soon...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5dff35fca56a4ed44877df4fa9a7ef00, type: 2}
   m_sharedMaterial: {fileID: 5388539023682872827, guid: 5dff35fca56a4ed44877df4fa9a7ef00, type: 2}
@@ -1444,7 +1444,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Join
+  m_text: Soon...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5dff35fca56a4ed44877df4fa9a7ef00, type: 2}
   m_sharedMaterial: {fileID: 5388539023682872827, guid: 5dff35fca56a4ed44877df4fa9a7ef00, type: 2}
@@ -1712,7 +1712,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1522031413}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 

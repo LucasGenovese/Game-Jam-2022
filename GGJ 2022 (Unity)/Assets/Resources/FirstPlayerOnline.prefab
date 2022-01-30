@@ -142,6 +142,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 3
+  Grounded: 0
+  groundLayers:
+    serializedVersion: 2
+    m_Bits: 256
   _animator: {fileID: 3319353868862014988}
   currentContainer: {fileID: 0}
   currentIngredient: {fileID: 0}
@@ -208,7 +212,9 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 2290164283741264051}
+  - {fileID: -7603255813196861340}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -242,5 +248,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowLayerWeightsInspector: 1
   ShowParameterInspector: 1
-  m_SynchronizeParameters: []
-  m_SynchronizeLayers: []
+  m_SynchronizeParameters:
+  - Type: 4
+    SynchronizeType: 0
+    Name: isClimbing
+  - Type: 4
+    SynchronizeType: 0
+    Name: isWalking
+  - Type: 9
+    SynchronizeType: 0
+    Name: Action
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0

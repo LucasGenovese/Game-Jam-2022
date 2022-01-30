@@ -142,6 +142,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 3
+  Grounded: 0
+  groundLayers:
+    serializedVersion: 2
+    m_Bits: 256
   _animator: {fileID: 2475976511629147694}
   currentContainer: {fileID: 0}
   currentIngredient: {fileID: 0}
@@ -210,6 +214,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: -5433024012688886023}
+  - {fileID: 490568861095623103}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
