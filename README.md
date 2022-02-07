@@ -1,7 +1,7 @@
 # Lost In The Attick
 > Global Game Jam 2022 - (Theme: Duality)
 
-![](header.jpg)
+![](header.png)
 
 ## Installation
 
