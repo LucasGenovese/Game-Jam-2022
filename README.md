@@ -1,4 +1,4 @@
-# Lost In The Attick
+# Stewed & Screwed
 > Global Game Jam 2022 - (Theme: Duality)
 
 ![](header.png)
